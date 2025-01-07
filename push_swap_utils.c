@@ -6,39 +6,12 @@
 /*   By: roo <roo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 21:20:02 by roo               #+#    #+#             */
-/*   Updated: 2025/01/07 01:05:36 by roo              ###   ########.fr       */
+/*   Updated: 2025/01/07 19:15:19 by roo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack  *ft_stacknew(int data)
-{
-    t_stack  *new;
-    
-    new = (t_stack *)malloc(sizeof(t_stack));
-    if(!new)
-        return(NULL);
-    new->num = data;
-    new->next = NULL;
-    return(new);
-}
-void				ft_stackadd_back(t_stack **lst, t_stack *new)
-{
-    t_stack  *node;
-    
-    node = *lst;
-    if(!node)
-    {
-        *lst = new;
-        return ;
-    }
-    while(lst && node->next != NULL)
-    {
-        node = node->next;       
-    }
-    node->next = new;
-}
 int	ft_atoi(const char *nptr)
 {
 	int		i;
@@ -64,14 +37,4 @@ int	ft_atoi(const char *nptr)
 		i++;
 	}
 	return (result * sig);
-}
-int print_stack(t_stack *stack_a)
-{
-    printf("%d\n", stack_a->num); // función prohibida cuidado
-    while(stack_a->next != NULL)
-    {
-        stack_a = stack_a->next;
-        printf("%d\n", stack_a->num); // función prohibida cuidado
-    }
-    return(stack_a->num);
 }

@@ -6,7 +6,7 @@
 /*   By: roo <roo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 20:36:16 by roo               #+#    #+#             */
-/*   Updated: 2025/01/07 01:00:16 by roo              ###   ########.fr       */
+/*   Updated: 2025/01/07 19:16:44 by roo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,18 @@ typedef struct stack_list
 	struct stack_list	*next;
 }					t_stack;
 
+// STACKS
+
 t_stack  	*ft_stacknew(int data);
 void		ft_stackadd_back(t_stack **lst, t_stack *new);
+int			ft_print_stack(t_stack *stack_a);
+
+// UTILS
 int			ft_atoi(const char *nptr);
-int			print_stack(t_stack *stack_a);
+
+// OPERATIONS
+
+int ft_swap(t_stack **stack);
+int ft_swap_swap(t_stack **stack, t_stack **stack_2);
 
 #endif
