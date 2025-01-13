@@ -6,7 +6,7 @@
 /*   By: roo <roo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 19:15:07 by roo               #+#    #+#             */
-/*   Updated: 2025/01/07 19:17:44 by roo              ###   ########.fr       */
+/*   Updated: 2025/01/07 19:24:19 by roo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ t_stack  *ft_stacknew(int data)
     new->next = NULL;
     return(new);
 }
-void				ft_stackadd_back(t_stack **lst, t_stack *new)
+void    ft_stackadd_back(t_stack **lst, t_stack *new)
 {
     t_stack  *node;
     
