@@ -6,7 +6,7 @@
 /*   By: roo <roo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 16:16:38 by roo               #+#    #+#             */
-/*   Updated: 2025/01/16 13:58:45 by roo              ###   ########.fr       */
+/*   Updated: 2025/01/16 23:16:31 by roo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,28 +50,4 @@ int ft_push(t_stack **stack_dest, t_stack **stack_orig) // según el pa o el pb 
     *stack_orig = tmp_aux;
     
     return(1);
-}
-
-int ft_rotate(t_stack **stack)
-{
-    t_stack *first;
-    t_stack *second;
-    //t_stack *third;
-
-    first = *stack;
-    second = (*stack)->next;
-    //third = (*stack)->next->next;
-    *stack = second;
-    first->next = NULL;
-    ft_stackadd_back(stack, first);
-    
-    return(1);
-
-}
-
-int ft_rotate_rotate(t_stack **stack, t_stack **stack_2)
-{
-    if(ft_rotate(stack) == 1 && ft_rotate(stack_2) == 1)
-        return(1);
-    return(0);
 }

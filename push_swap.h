@@ -6,7 +6,7 @@
 /*   By: roo <roo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 20:36:16 by roo               #+#    #+#             */
-/*   Updated: 2025/01/16 21:10:32 by roo              ###   ########.fr       */
+/*   Updated: 2025/01/16 23:17:37 by roo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,12 @@ int			ft_atoi(const char *nptr);
 int 		ft_swap(t_stack **stack);
 int 		ft_swap_swap(t_stack **stack, t_stack **stack_2);
 int 		ft_push(t_stack **stack_dest, t_stack **stack_orig);
+
 int			ft_rotate(t_stack **stack);
 int			ft_rotate_rotate(t_stack **stack, t_stack **stack_2);
-
 int			ft_reverse_rotate(t_stack **stack);
+int			ft_reverse_reverse(t_stack **stack, t_stack **stack_2);
+
 
 
 #endif
