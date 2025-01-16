@@ -6,7 +6,7 @@
 /*   By: roo <roo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 20:32:42 by roo               #+#    #+#             */
-/*   Updated: 2025/01/07 19:16:28 by roo              ###   ########.fr       */
+/*   Updated: 2025/01/16 13:49:33 by roo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,22 @@ int main(int argc, char **argv)
     {
         ft_stackadd_back(&stack_a, ft_stacknew(ft_atoi(argv[i])));
     }
-    return(ft_print_stack(stack_a), 0);
+
+    ////////////////////////// PRUEBAS //////////////////////////
+    
+    //ft_swap(&stack_a);
+    //ft_swap_swap(&stack_b, &stack_a);
+    //ft_push(&stack_b, &stack_a);
+    //ft_push(&stack_a, &stack_b);
+    //ft_rotate(&stack_a);
+    //ft_rotate_rotate(&stack_a, &stack_b);
+    //printf("\n así empieza el stack_a:\n"); //función prohibida cuidao!!!
+    //ft_print_stack(stack_a);
+    //printf("\n así empieza el stack_b:\n"); //función prohibida cuidao!!!
+    //ft_print_stack(stack_b);
+    //printf("\n así se queda el stack_a al final:\n"); //función prohibida cuidao!!!
+    //ft_print_stack(stack_a);
+    //printf("\n así se queda el stack_b al final:\n"); //función prohibida cuidao!!!
+    //ft_print_stack(stack_b);
+    return(0);
 }
