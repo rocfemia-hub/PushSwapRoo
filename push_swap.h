@@ -6,7 +6,7 @@
 /*   By: roo <roo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 20:36:16 by roo               #+#    #+#             */
-/*   Updated: 2025/01/16 23:17:37 by roo              ###   ########.fr       */
+/*   Updated: 2025/01/17 20:03:57 by roo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,14 @@ void		ft_stackadd_back(t_stack **stack, t_stack *new);
 // UTILS
 
 int			ft_atoi(const char *nptr);
+int			ft_nums_overflow(const char *nptr);
+
+
+static int	ft_words_num(const char *s, char c);
+static int	ft_lett_words(const char *s, char c, int k);
+static void	ft_free_free(char **matrix);
+static char	**ft_split2(const char *s, char c, char **matrix);
+char		**ft_split(const char *s, char c);
 
 // OPERATIONS
 
