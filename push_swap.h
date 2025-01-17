@@ -6,7 +6,7 @@
 /*   By: roo <roo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 20:36:16 by roo               #+#    #+#             */
-/*   Updated: 2025/01/17 20:03:57 by roo              ###   ########.fr       */
+/*   Updated: 2025/01/17 20:34:32 by roo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ typedef struct stack_list
 int			ft_print_stack(t_stack *stack_a);
 t_stack		*ft_stacknew(int data);
 void		ft_stackadd_back(t_stack **stack, t_stack *new);
+void		ft_free_stack(t_stack **stack);
 
 // UTILS
 
@@ -48,6 +49,7 @@ char		**ft_split(const char *s, char c);
 int 		ft_swap(t_stack **stack);
 int 		ft_swap_swap(t_stack **stack, t_stack **stack_2);
 int 		ft_push(t_stack **stack_dest, t_stack **stack_orig);
+
 
 int			ft_rotate(t_stack **stack);
 int			ft_rotate_rotate(t_stack **stack, t_stack **stack_2);

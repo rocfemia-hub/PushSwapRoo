@@ -6,7 +6,7 @@
 /*   By: roo <roo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 20:32:42 by roo               #+#    #+#             */
-/*   Updated: 2025/01/17 20:15:33 by roo              ###   ########.fr       */
+/*   Updated: 2025/01/17 20:34:41 by roo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int main(int argc, char **argv)
     while (argv[++i])
     {
         if (ft_nums_overflow(argv[i]) == -1)
-            return(printf("Error!!!\n"), 0); ///función prohibida cuidao (además debes freesear antes de retornar)
+            return(printf("Error!!!\n"), ft_free_stack(&stack_a), 0); ///función prohibida cuidao (además debes freesear antes de retornar)
         ft_stackadd_back(&stack_a, ft_stacknew(ft_atoi(argv[i])));
     }
 
@@ -53,5 +53,6 @@ int main(int argc, char **argv)
     //ft_print_stack(stack_a);
     //printf("\n así se queda el stack_b al final:\n"); //función prohibida cuidao!!!
     //ft_print_stack(stack_b);
+    ft_free_stack(&stack_a);
     return(0);
 }
