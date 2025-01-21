@@ -6,13 +6,13 @@
 /*   By: roo <roo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 21:20:02 by roo               #+#    #+#             */
-/*   Updated: 2025/01/17 20:34:57 by roo              ###   ########.fr       */
+/*   Updated: 2025/01/21 19:16:27 by roo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_atoi(const char *nptr)
+int	ft_atoi2(const char *nptr)
 {
 	int		i;
 	int		sig;
@@ -63,4 +63,21 @@ int	ft_nums_overflow(const char *nptr)
 			return(-1);
 	}
 	return(0);
+}
+
+int ft_find_indexbynum(int num, t_stack *stack)
+{
+    t_stack *tmp;
+    int     i;
+
+    tmp = stack;
+    i = 0;
+    while(tmp)
+    {
+        if (tmp->num == num)
+            return (i);
+        tmp = tmp->next;
+        i++;
+    }
+    return (-1);
 }

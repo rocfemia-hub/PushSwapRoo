@@ -6,7 +6,7 @@
 /*   By: roo <roo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 20:32:42 by roo               #+#    #+#             */
-/*   Updated: 2025/01/21 13:17:33 by roo              ###   ########.fr       */
+/*   Updated: 2025/01/21 19:58:14 by roo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,12 @@ int main(int argc, char **argv)
 {
     t_stack *stack_a;
     t_stack *stack_b;
+    t_vars  *var;
     int     i;
     char    **argvn;
-    int     error;
     
     stack_a = NULL;
+    var = ft_calloc(1, sizeof(t_vars));
     stack_b = NULL;
     i = 0;
     if (argc == 2)
@@ -30,7 +31,7 @@ int main(int argc, char **argv)
     {
         if (ft_nums_overflow(argv[i]) == -1)
             return(ft_printf("Error!!!\n"), ft_free_stack(&stack_a), 0); //debes freesear antes de retornar
-        ft_stackadd_back(&stack_a, ft_stacknew(ft_atoi(argv[i])));
+        ft_stackadd_back(&stack_a, ft_stacknew(ft_atoi2(argv[i])));
     }
 
     ////////////////////////// PRUEBAS //////////////////////////
@@ -56,7 +57,6 @@ int main(int argc, char **argv)
     ft_print_stack(stack_b);
     
     int pos = ft_idealpos(stack_a->num, stack_b);
-
     if (pos != 42000)
         ft_printf("\n El número %d debe insertarse en la posición %d.\n", stack_a->num, pos);
     else

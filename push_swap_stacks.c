@@ -6,7 +6,7 @@
 /*   By: roo <roo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 19:15:07 by roo               #+#    #+#             */
-/*   Updated: 2025/01/21 13:15:20 by roo              ###   ########.fr       */
+/*   Updated: 2025/01/21 18:57:23 by roo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,14 @@ void    ft_stackadd_back(t_stack **stack, t_stack *new)
         node = node->next;       
     }
     node->next = new;
+}
+t_stack		*ft_stacklast(t_stack *stack)
+{
+    while(stack && stack->next != NULL)
+    {
+        stack = stack->next;
+    }
+    return(stack);
 }
 
 void	ft_free_stack(t_stack **stack)
