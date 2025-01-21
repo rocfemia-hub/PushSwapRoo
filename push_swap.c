@@ -6,7 +6,7 @@
 /*   By: roo <roo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 20:32:42 by roo               #+#    #+#             */
-/*   Updated: 2025/01/21 02:35:04 by roo              ###   ########.fr       */
+/*   Updated: 2025/01/21 13:17:33 by roo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int main(int argc, char **argv)
     while (argv[++i])
     {
         if (ft_nums_overflow(argv[i]) == -1)
-            return(printf("Error!!!\n"), ft_free_stack(&stack_a), 0); ///función prohibida cuidao (además debes freesear antes de retornar)
+            return(ft_printf("Error!!!\n"), ft_free_stack(&stack_a), 0); //debes freesear antes de retornar
         ft_stackadd_back(&stack_a, ft_stacknew(ft_atoi(argv[i])));
     }
 
@@ -47,23 +47,23 @@ int main(int argc, char **argv)
     ft_push(&stack_b, &stack_a);
     ft_push(&stack_b, &stack_a);
     ft_push(&stack_b, &stack_a);
-    //ft_push(&stack_b, &stack_a);
+    ft_push(&stack_b, &stack_a);
 
     
-    printf("\n así empieza el stack_a:\n"); //función prohibida cuidao!!!
+    ft_printf("\n así empieza el stack_a:\n");
     ft_print_stack(stack_a);
-    printf("\n así empieza el stack_b:\n"); //función prohibida cuidao!!!
+    ft_printf("\n así empieza el stack_b:\n");
     ft_print_stack(stack_b);
     
     int pos = ft_idealpos(stack_a->num, stack_b);
 
     if (pos != 42000)
-        printf("\n El número %d debe insertarse en la posición %d.\n", stack_a->num, pos); //función prohibida cuidao!!!
+        ft_printf("\n El número %d debe insertarse en la posición %d.\n", stack_a->num, pos);
     else
-        printf("\n No se encontró una posición adecuada para el número %d.\n", stack_a->num); //función prohibida cuidao!!!
-    //printf("\n así se queda el stack_a al final:\n"); //función prohibida cuidao!!!
+        ft_printf("\n No se encontró una posición adecuada para el número %d.\n", stack_a->num);
+    //ft_printf("\n así se queda el stack_a al final:\n");
     //ft_print_stack(stack_a);
-    //printf("\n así se queda el stack_b al final:\n"); //función prohibida cuidao!!!
+    //ft_printf("\n así se queda el stack_b al final:\n");
     //ft_print_stack(stack_b);
     ft_free_stack(&stack_a);
     return(0);

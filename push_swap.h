@@ -6,7 +6,7 @@
 /*   By: roo <roo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 20:36:16 by roo               #+#    #+#             */
-/*   Updated: 2025/01/21 02:07:33 by roo              ###   ########.fr       */
+/*   Updated: 2025/01/21 13:13:10 by roo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 # include <unistd.h>
 # include <limits.h>
 # include <stdio.h>
+# include <stdarg.h>
+
 
 typedef struct stack_list
 {
@@ -57,7 +59,23 @@ int			ft_reverse_rotate(t_stack **stack);
 int			ft_reverse_reverse(t_stack **stack, t_stack **stack_2);
 
 // PRICES
+
 int			ft_idealpos(int number, t_stack *stack);
+
+// PRINT_F
+
+static int	ft_conversions(va_list vargs, int i, int result);
+int			ft_printf(char const *str, ...);
+
+int			ft_printf_x(unsigned long long n, int fd, int result);
+int			ft_printf_super_x(unsigned int n, int fd, int result);
+int			ft_printf_u(unsigned int n, int fd, int result);
+int			ft_printf_p(void *p, int fd, int result);
+
+size_t	ft_strlen(const char *s);
+int	ft_putstr_fd(char *s, int fd, int result);
+int	ft_putnbr_fd(int n, int fd, int result);
+int	ft_putchar_fd(char c, int fd, int result);
 
 
 #endif

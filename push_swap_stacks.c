@@ -6,20 +6,19 @@
 /*   By: roo <roo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 19:15:07 by roo               #+#    #+#             */
-/*   Updated: 2025/01/17 20:35:03 by roo              ###   ########.fr       */
+/*   Updated: 2025/01/21 13:15:20 by roo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h> // función prohibida cuidao
 
 int ft_print_stack(t_stack *stack_a)
 {
-    printf("%d\n", stack_a->num); // función prohibida cuidao!!!
+    ft_printf("%d\n", stack_a->num);
     while(stack_a->next != NULL)
     {
         stack_a = stack_a->next;
-        printf("%d\n", stack_a->num); // función prohibida cuidao!!!
+        ft_printf("%d\n", stack_a->num);
     }
     return(stack_a->num);
 }

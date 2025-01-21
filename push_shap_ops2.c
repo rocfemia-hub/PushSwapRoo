@@ -6,7 +6,7 @@
 /*   By: roo <roo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 14:15:22 by roo               #+#    #+#             */
-/*   Updated: 2025/01/16 23:16:17 by roo              ###   ########.fr       */
+/*   Updated: 2025/01/21 13:13:51 by roo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,9 @@ int ft_rotate(t_stack **stack)
 {
     t_stack *first;
     t_stack *second;
-    //t_stack *third;
 
     first = *stack;
     second = (*stack)->next;
-    //third = (*stack)->next->next;
     *stack = second;
     first->next = NULL;
     ft_stackadd_back(stack, first);
