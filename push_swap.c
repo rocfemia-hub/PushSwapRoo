@@ -6,7 +6,7 @@
 /*   By: roo <roo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 20:32:42 by roo               #+#    #+#             */
-/*   Updated: 2025/01/17 20:34:41 by roo              ###   ########.fr       */
+/*   Updated: 2025/01/21 02:35:04 by roo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,23 @@ int main(int argc, char **argv)
     //ft_reverse_rotate(&stack_a);
     //ft_reverse_reverse(&stack_a, &stack_b);
     
+    ft_push(&stack_b, &stack_a);
+    ft_push(&stack_b, &stack_a);
+    ft_push(&stack_b, &stack_a);
+    //ft_push(&stack_b, &stack_a);
+
+    
     printf("\n así empieza el stack_a:\n"); //función prohibida cuidao!!!
     ft_print_stack(stack_a);
-    //printf("\n así empieza el stack_b:\n"); //función prohibida cuidao!!!
-    //ft_print_stack(stack_b);
+    printf("\n así empieza el stack_b:\n"); //función prohibida cuidao!!!
+    ft_print_stack(stack_b);
     
+    int pos = ft_idealpos(stack_a->num, stack_b);
+
+    if (pos != 42000)
+        printf("\n El número %d debe insertarse en la posición %d.\n", stack_a->num, pos); //función prohibida cuidao!!!
+    else
+        printf("\n No se encontró una posición adecuada para el número %d.\n", stack_a->num); //función prohibida cuidao!!!
     //printf("\n así se queda el stack_a al final:\n"); //función prohibida cuidao!!!
     //ft_print_stack(stack_a);
     //printf("\n así se queda el stack_b al final:\n"); //función prohibida cuidao!!!

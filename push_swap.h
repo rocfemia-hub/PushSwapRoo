@@ -6,7 +6,7 @@
 /*   By: roo <roo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 20:36:16 by roo               #+#    #+#             */
-/*   Updated: 2025/01/17 20:34:32 by roo              ###   ########.fr       */
+/*   Updated: 2025/01/21 02:07:33 by roo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,8 @@ int			ft_rotate_rotate(t_stack **stack, t_stack **stack_2);
 int			ft_reverse_rotate(t_stack **stack);
 int			ft_reverse_reverse(t_stack **stack, t_stack **stack_2);
 
+// PRICES
+int			ft_idealpos(int number, t_stack *stack);
 
 
 #endif
