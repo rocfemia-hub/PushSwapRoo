@@ -22,25 +22,25 @@ INCLUDE = push_swap.h
 
 NAME = push_swap
 
-LIBFTA = Helicoptero/libft.a
+LIBFTA = Helicopter/libft.a
 
 all: $(NAME)
 
 %.o: %.c
-	@$(CC) $(CCFLAGS) -I/Helicoptero/libft.h -I/usr/include -O3 -c $< -o $@
+	@$(CC) $(CCFLAGS) -I/Helicopter/libft.h -I/usr/include -O3 -c $< -o $@
 
 $(NAME): $(OBJ)
-	@cd Helicoptero && make
-	@$(CC) $(CCFLAGS) $(OBJ) -IHelicoptero $(LIBFTA) -o $(NAME)
-	@echo "$(YELLOW)        ||>>    $(BLUE)push_swap $(YELLOW)compiled!!    <<||$(RESET)"
+	@cd Helicopter && make
+	@$(CC) $(CCFLAGS) $(OBJ) -IHelicopter $(LIBFTA) -o $(NAME)
+	@echo "$(GREEN)        ||>>    $(GREEN)push_swap $(GREEN)compiled!!    <<||$(RESET)"
 
 clean:
 	@$(RM) $(OBJ)
-	@cd Helicoptero && make clean
+	@cd Helicopter && make clean
 
 fclean:
 	@$(RM) $(NAME) $(OBJ)
-	@cd Helicoptero && make fclean
+	@cd Helicopter && make fclean
 
 re: fclean all
 

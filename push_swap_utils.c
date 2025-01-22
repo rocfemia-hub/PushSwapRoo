@@ -6,7 +6,7 @@
 /*   By: roo <roo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 21:20:02 by roo               #+#    #+#             */
-/*   Updated: 2025/01/21 19:16:27 by roo              ###   ########.fr       */
+/*   Updated: 2025/01/22 17:15:07 by roo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ int	ft_atoi2(const char *nptr)
 	}
 	return (result * sig);
 }
+
 int	ft_nums_overflow(const char *nptr)
 {
 	int		i;
@@ -80,4 +81,18 @@ int ft_find_indexbynum(int num, t_stack *stack)
         i++;
     }
     return (-1);
+}
+
+void ft_min_max(t_vars *var, t_stack *stack)
+{
+	var->max_b = 0;
+	var->min_b = 0;
+	while (stack->next != NULL)
+	{
+		if(stack->num > var->max_b)
+			var->max_b = stack->num;
+		if(stack->num < var->min_b)
+			var->min_b = stack->num;
+		stack = stack->next;
+	}
 }

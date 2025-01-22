@@ -6,7 +6,7 @@
 /*   By: roo <roo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 20:36:16 by roo               #+#    #+#             */
-/*   Updated: 2025/01/21 19:55:20 by roo              ###   ########.fr       */
+/*   Updated: 2025/01/22 17:11:25 by roo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <limits.h>
 # include <stdio.h>
 # include <stdarg.h>
-# include "./Helicoptero/libft.h"
+# include "./Helicopter/libft.h"
 
 
 typedef struct stack_list
@@ -48,6 +48,7 @@ void		ft_free_stack(t_stack **stack);
 int			ft_atoi2(const char *nptr);
 int			ft_nums_overflow(const char *nptr);
 int 		ft_find_indexbynum(int num, t_stack *stack);
+void 		ft_min_max(t_vars *var, t_stack *stack);
 
 // OPERATIONS
 

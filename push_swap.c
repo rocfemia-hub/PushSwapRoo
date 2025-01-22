@@ -6,7 +6,7 @@
 /*   By: roo <roo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 20:32:42 by roo               #+#    #+#             */
-/*   Updated: 2025/01/21 19:58:14 by roo              ###   ########.fr       */
+/*   Updated: 2025/01/22 19:20:49 by roo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,16 @@ int main(int argc, char **argv)
 {
     t_stack *stack_a;
     t_stack *stack_b;
-    t_vars  *var;
+    //t_vars  *var;
     int     i;
     char    **argvn;
     
     stack_a = NULL;
-    var = ft_calloc(1, sizeof(t_vars));
+    //var = ft_calloc(1, sizeof(t_vars));
     stack_b = NULL;
     i = 0;
-    if (argc == 2)
+    argvn = NULL;
+    if (argc == 2 && !argvn)
         argvn = ft_split(argv[1], ' ');
     i = 0;
     while (argv[++i])
