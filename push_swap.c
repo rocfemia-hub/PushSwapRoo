@@ -6,7 +6,7 @@
 /*   By: roo <roo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 20:32:42 by roo               #+#    #+#             */
-/*   Updated: 2025/01/22 19:20:49 by roo              ###   ########.fr       */
+/*   Updated: 2025/01/24 20:59:26 by roo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@ int main(int argc, char **argv)
 {
     t_stack *stack_a;
     t_stack *stack_b;
-    //t_vars  *var;
+    t_vars  *var;
     int     i;
     char    **argvn;
     
     stack_a = NULL;
-    //var = ft_calloc(1, sizeof(t_vars));
+    var = ft_calloc(1, sizeof(t_vars));
     stack_b = NULL;
     i = 0;
     argvn = NULL;
@@ -48,8 +48,7 @@ int main(int argc, char **argv)
     
     ft_push(&stack_b, &stack_a);
     ft_push(&stack_b, &stack_a);
-    ft_push(&stack_b, &stack_a);
-    ft_push(&stack_b, &stack_a);
+
 
     
     ft_printf("\n así empieza el stack_a:\n");
@@ -57,15 +56,26 @@ int main(int argc, char **argv)
     ft_printf("\n así empieza el stack_b:\n");
     ft_print_stack(stack_b);
     
-    int pos = ft_idealpos(stack_a->num, stack_b);
-    if (pos != 42000)
-        ft_printf("\n El número %d debe insertarse en la posición %d.\n", stack_a->num, pos);
-    else
-        ft_printf("\n No se encontró una posición adecuada para el número %d.\n", stack_a->num);
+    ft_min_max(var, stack_b);
+    ft_price_mov(stack_a, stack_b, var);
+    while (var->i_stack_a--)
+        ft_rotate(&stack_a);
+    while (var->i_stack_b--)
+        ft_rotate(&stack_b);
+    ft_push(&stack_b, &stack_a);
+    // int pos = ft_ideal_pos(stack_a->num, var, stack_b);
+    // if (pos != 42000)
+    //     ft_printf("\n El número %d debe insertarse en la posición %d.\n", stack_a->num, pos);
+    // else
+    //     ft_printf("\n No se encontró una posición adecuada para el número %d.\n", stack_a->num);
     //ft_printf("\n así se queda el stack_a al final:\n");
     //ft_print_stack(stack_a);
     //ft_printf("\n así se queda el stack_b al final:\n");
     //ft_print_stack(stack_b);
+    ft_printf("\n así esta el stack_a:\n");
+    ft_print_stack(stack_a);
+    ft_printf("\n así esta el stack_b:\n");
+    ft_print_stack(stack_b);
     ft_free_stack(&stack_a);
     return(0);
 }

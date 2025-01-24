@@ -6,7 +6,7 @@
 /*   By: roo <roo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 20:36:16 by roo               #+#    #+#             */
-/*   Updated: 2025/01/22 17:11:25 by roo              ###   ########.fr       */
+/*   Updated: 2025/01/24 20:54:08 by roo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,12 @@ typedef struct variables
 {
 	int		min_b;
 	int		max_b;
+	int		price;
+	int		tmpprice;
+	int		i_stack_a;
+	int		i_stack_b;
+	int		tmp_i_a;
+	int		tmp_i_b;
 }	t_vars;
 
 
@@ -64,6 +70,10 @@ int			ft_reverse_reverse(t_stack **stack, t_stack **stack_2);
 
 // PRICES
 
-int			ft_idealpos(int number, t_stack *stack);
+int			ft_ideal_pos(int number, t_vars *var, t_stack *stack);
+void  	  	ft_price_mov(t_stack *stack_a, t_stack *stack_b, t_vars *var);
+void  		ft_price(t_stack *stack_a, t_stack *stack_b, t_vars *var);
+void    	ft_normal_price(t_stack *stack_a, t_stack *stack_b, t_vars *var);
+void    	ft_unusual_price(t_stack *stack_b, t_vars *var);
 
 #endif
