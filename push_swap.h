@@ -6,7 +6,7 @@
 /*   By: roo <roo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 20:36:16 by roo               #+#    #+#             */
-/*   Updated: 2025/01/24 20:54:08 by roo              ###   ########.fr       */
+/*   Updated: 2025/02/02 21:38:52 by roo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,12 @@ typedef struct variables
 	int		i_stack_b;
 	int		tmp_i_a;
 	int		tmp_i_b;
+	int		len_a;
+	int		len_b;
+	int		first;
+	int		second;
+	int		trird;
+	int		num_ops;
 }	t_vars;
 
 
@@ -48,6 +54,8 @@ t_stack		*ft_stacknew(int data);
 void		ft_stackadd_back(t_stack **stack, t_stack *new);
 t_stack		*ft_stacklast(t_stack *stack);
 void		ft_free_stack(t_stack **stack);
+int 		ft_stacksize(t_stack *stack);
+void		ft_stackadd_front(t_stack **lst, t_stack *new);
 
 // UTILS
 

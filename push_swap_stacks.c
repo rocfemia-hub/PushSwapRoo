@@ -6,21 +6,23 @@
 /*   By: roo <roo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 19:15:07 by roo               #+#    #+#             */
-/*   Updated: 2025/01/21 18:57:23 by roo              ###   ########.fr       */
+/*   Updated: 2025/01/27 21:52:02 by roo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int ft_print_stack(t_stack *stack_a)
+int ft_print_stack(t_stack *stack)
 {
-    ft_printf("%d\n", stack_a->num);
-    while(stack_a->next != NULL)
+    if(!stack)
+        return(0);
+    ft_printf("%d\n", stack->num);
+    while(stack->next != NULL)
     {
-        stack_a = stack_a->next;
-        ft_printf("%d\n", stack_a->num);
+        stack = stack->next;
+        ft_printf("%d\n", stack->num);
     }
-    return(stack_a->num);
+    return(stack->num);
 }
 
 t_stack  *ft_stacknew(int data)
@@ -72,6 +74,33 @@ void	ft_free_stack(t_stack **stack)
 		free(node);
 		node = aux;
 	}
+}
+
+int ft_stacksize(t_stack *stack)
+{
+    int i;
+    
+    i = 0;
+    while(stack)
+    {
+        stack = stack->next;
+        i++;
+    }
+    return(i);
+}
+
+void    ft_stackadd_front(t_stack **lst, t_stack *new)
+{
+	if (!*lst)
+	{
+		*lst = new;
+		new->next = NULL;
+	}
+	else
+	{
+		new->next = *lst;
+   		*lst = new;
+	}  
 }
 
 /*t_stack *findprev(t_stack *stack_a, int num)

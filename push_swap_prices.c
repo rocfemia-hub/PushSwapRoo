@@ -6,7 +6,7 @@
 /*   By: roo <roo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 00:55:21 by roo               #+#    #+#             */
-/*   Updated: 2025/01/24 20:54:00 by roo              ###   ########.fr       */
+/*   Updated: 2025/01/30 17:35:15 by roo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void    ft_price_mov(t_stack *stack_a, t_stack *stack_b, t_vars *var)
 {
     var->price = INT_MAX;
-    var->i_stack_a = 0;
+    var->tmp_i_a = 0;
     while(stack_a)
     {
         ft_price(stack_a, stack_b, var);
@@ -36,6 +36,7 @@ void    ft_price(t_stack *stack_a, t_stack *stack_b, t_vars *var)
         var->price = var->tmpprice;
         var->i_stack_a = var->tmp_i_a;
         var->i_stack_b = var->tmp_i_b;
+		printf("precio %d indexa %d indexb %d\n", var->price, var->i_stack_a, var->i_stack_b);
     }
 }
 

@@ -6,7 +6,7 @@
 /*   By: roo <roo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 16:16:38 by roo               #+#    #+#             */
-/*   Updated: 2025/01/16 23:16:31 by roo              ###   ########.fr       */
+/*   Updated: 2025/01/27 21:51:36 by roo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,17 +37,11 @@ int ft_swap_swap(t_stack **stack, t_stack **stack_2)
 
 int ft_push(t_stack **stack_dest, t_stack **stack_orig) // según el pa o el pb que queramos hacer colocaremos los stacks en un orden u otro.
 {
-    t_stack *first_dest;
     t_stack *first_orig;
-    t_stack *tmp_aux;
 
-    first_dest = *stack_dest;
-    first_orig = *stack_orig;
-    tmp_aux = (*stack_orig)->next;
-
-    *stack_dest = first_orig;
-    first_orig->next = first_dest;
-    *stack_orig = tmp_aux;
-    
+	first_orig = *stack_orig;
+	*stack_orig = (*stack_orig)->next;
+	first_orig->next = NULL;
+	ft_stackadd_front(stack_dest, first_orig);
     return(1);
 }

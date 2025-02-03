@@ -6,7 +6,7 @@
 /*   By: roo <roo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 21:20:02 by roo               #+#    #+#             */
-/*   Updated: 2025/01/22 17:15:07 by roo              ###   ########.fr       */
+/*   Updated: 2025/01/27 22:08:56 by roo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,14 +80,14 @@ int ft_find_indexbynum(int num, t_stack *stack)
         tmp = tmp->next;
         i++;
     }
-    return (-1);
+    return (8324);
 }
 
 void ft_min_max(t_vars *var, t_stack *stack)
 {
-	var->max_b = 0;
-	var->min_b = 0;
-	while (stack->next != NULL)
+	var->max_b = INT_MIN;
+	var->min_b = INT_MAX;
+	while (stack)
 	{
 		if(stack->num > var->max_b)
 			var->max_b = stack->num;
