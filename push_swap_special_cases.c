@@ -6,7 +6,7 @@
 /*   By: roo <roo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 18:15:11 by roo               #+#    #+#             */
-/*   Updated: 2025/02/02 21:45:29 by roo              ###   ########.fr       */
+/*   Updated: 2025/02/03 20:28:14 by roo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int last3_stack_a(t_stack **stack_a, t_vars *var)
 	else if (var->first < var->trird && var->trird < var->second)
 		return (var->num_ops += ft_swap(stack_a), var->num_ops += ft_rotate(stack_a), 2);
 	else if (var->trird < var->second && var->second > var->first)
-		return (var->num_ops += ft_reverse_rotate(stack_a, 0), 3);
+		return (var->num_ops += ft_reverse_rotate(stack_a), 3);
 	else if (var->first > var->second && var->second < var->trird)
 		return (var->num_ops += ft_rotate(stack_a), 4);
 	else if (var->first > var->second && var->second > var->trird)

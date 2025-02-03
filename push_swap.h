@@ -6,7 +6,7 @@
 /*   By: roo <roo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 20:36:16 by roo               #+#    #+#             */
-/*   Updated: 2025/02/02 21:38:52 by roo              ###   ########.fr       */
+/*   Updated: 2025/02/03 20:39:57 by roo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,11 +51,12 @@ typedef struct variables
 
 int			ft_print_stack(t_stack *stack_a);
 t_stack		*ft_stacknew(int data);
-void		ft_stackadd_back(t_stack **stack, t_stack *new);
 t_stack		*ft_stacklast(t_stack *stack);
-void		ft_free_stack(t_stack **stack);
 int 		ft_stacksize(t_stack *stack);
+
+void		ft_free_stack(t_stack **stack);
 void		ft_stackadd_front(t_stack **lst, t_stack *new);
+void		ft_stackadd_back(t_stack **stack, t_stack *new);
 
 // UTILS
 
@@ -78,10 +79,16 @@ int			ft_reverse_reverse(t_stack **stack, t_stack **stack_2);
 
 // PRICES
 
-int			ft_ideal_pos(int number, t_vars *var, t_stack *stack);
 void  	  	ft_price_mov(t_stack *stack_a, t_stack *stack_b, t_vars *var);
 void  		ft_price(t_stack *stack_a, t_stack *stack_b, t_vars *var);
 void    	ft_normal_price(t_stack *stack_a, t_stack *stack_b, t_vars *var);
 void    	ft_unusual_price(t_stack *stack_b, t_vars *var);
+int			ft_ideal_pos(int number, t_vars *var, t_stack *stack);
+
+// SPECIAL CASES
+
+int			last3_stack_a(t_stack **stack_a, t_vars *var);
+int			ft_if_ascending(t_stack *stack);
+
 
 #endif
