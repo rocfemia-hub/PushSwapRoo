@@ -6,7 +6,7 @@
 /*   By: roo <roo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 20:36:16 by roo               #+#    #+#             */
-/*   Updated: 2025/02/03 20:39:57 by roo              ###   ########.fr       */
+/*   Updated: 2025/02/17 19:44:17 by roo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ typedef struct variables
 {
 	int		min_b;
 	int		max_b;
+	int		pos_max_b;
 	int		price;
 	int		tmpprice;
 	int		i_stack_a;
@@ -42,7 +43,7 @@ typedef struct variables
 	int		len_b;
 	int		first;
 	int		second;
-	int		trird;
+	int		third;
 	int		num_ops;
 }	t_vars;
 
@@ -71,7 +72,6 @@ int 		ft_swap(t_stack **stack);
 int 		ft_swap_swap(t_stack **stack, t_stack **stack_2);
 int 		ft_push(t_stack **stack_dest, t_stack **stack_orig);
 
-
 int			ft_rotate(t_stack **stack);
 int			ft_rotate_rotate(t_stack **stack, t_stack **stack_2);
 int			ft_reverse_rotate(t_stack **stack);
@@ -87,8 +87,9 @@ int			ft_ideal_pos(int number, t_vars *var, t_stack *stack);
 
 // SPECIAL CASES
 
-int			last3_stack_a(t_stack **stack_a, t_vars *var);
+int			ft_last3_stack_a(t_stack **stack_a, t_vars *var);
 int			ft_if_ascending(t_stack *stack);
+void		ft_big_first(t_stack **stack_b, t_vars *var);
 
 
 #endif

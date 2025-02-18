@@ -6,7 +6,7 @@
 /*   By: roo <roo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 21:20:02 by roo               #+#    #+#             */
-/*   Updated: 2025/01/27 22:08:56 by roo              ###   ########.fr       */
+/*   Updated: 2025/02/18 16:24:01 by roo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,14 +85,26 @@ int ft_find_indexbynum(int num, t_stack *stack)
 
 void ft_min_max(t_vars *var, t_stack *stack)
 {
+	int i;
+	
+	i = 0;
+	
 	var->max_b = INT_MIN;
 	var->min_b = INT_MAX;
 	while (stack)
 	{
 		if(stack->num > var->max_b)
+		{
 			var->max_b = stack->num;
+			var->pos_max_b = i;	
+		}
 		if(stack->num < var->min_b)
+		{
 			var->min_b = stack->num;
+			var->pos_max_b = i;
+		}
 		stack = stack->next;
+		i++;
 	}
+	
 }

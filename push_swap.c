@@ -6,7 +6,7 @@
 /*   By: roo <roo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 20:32:42 by roo               #+#    #+#             */
-/*   Updated: 2025/01/27 22:09:30 by roo              ###   ########.fr       */
+/*   Updated: 2025/02/17 19:46:54 by roo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,8 @@ int main(int argc, char **argv)
     	var->len_b = ft_stacksize(stack_b);
         ft_min_max(var, stack_b);
     }
+	ft_last3_stack_a(&stack_a, var);
+	ft_big_first(&stack_b, var);
 	
     // int pos = ft_ideal_pos(stack_a->num, var, stack_b);
     // if (pos != 42000)
