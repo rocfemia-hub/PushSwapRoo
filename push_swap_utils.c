@@ -6,7 +6,7 @@
 /*   By: roo <roo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 21:20:02 by roo               #+#    #+#             */
-/*   Updated: 2025/02/18 16:24:01 by roo              ###   ########.fr       */
+/*   Updated: 2025/02/19 17:14:07 by roo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,7 @@ void ft_min_max(t_vars *var, t_stack *stack)
 		if(stack->num < var->min_b)
 		{
 			var->min_b = stack->num;
-			var->pos_max_b = i;
+			var->pos_min_b = i;
 		}
 		stack = stack->next;
 		i++;

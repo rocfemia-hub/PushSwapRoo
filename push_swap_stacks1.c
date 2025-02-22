@@ -6,7 +6,7 @@
 /*   By: roo <roo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 19:15:07 by roo               #+#    #+#             */
-/*   Updated: 2025/02/03 20:39:43 by roo              ###   ########.fr       */
+/*   Updated: 2025/02/20 13:38:46 by roo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ t_stack  *ft_stacknew(int data)
 
 t_stack		*ft_stacklast(t_stack *stack)
 {
+	if (!stack)
+		return (NULL);
     while(stack && stack->next != NULL)
     {
         stack = stack->next;

@@ -6,7 +6,7 @@
 /*   By: roo <roo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 20:32:42 by roo               #+#    #+#             */
-/*   Updated: 2025/02/17 19:46:54 by roo              ###   ########.fr       */
+/*   Updated: 2025/02/20 16:24:43 by roo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,18 +22,30 @@ int main(int argc, char **argv)
     
     stack_a = NULL;
     var = ft_calloc(1, sizeof(t_vars));
+	var->num_ops = 0;
     stack_b = NULL;
-    i = 0;
     argvn = NULL;
     if (argc == 2 && !argvn)
+	{
+ 	   	i = -1;
         argvn = ft_split(argv[1], ' ');
-    i = 0;
-    while (argv[++i])
-    {
-        if (ft_nums_overflow(argv[i]) == -1)
-            return(ft_printf("Error!!!\n"), ft_free_stack(&stack_a), 0); //debes freesear antes de retornar
-        ft_stackadd_back(&stack_a, ft_stacknew(ft_atoi2(argv[i])));
-    }
+		while (argvn[++i])
+		{
+			if (ft_nums_overflow(argvn[i]) == -1)
+				return(ft_printf("Error!!!\n"), ft_free_stack(&stack_a), 0); //debes freesear antes de retornar
+			ft_stackadd_back(&stack_a, ft_stacknew(ft_atoi2(argvn[i])));
+		}
+	}
+	else
+	{
+		i = 0;
+		while (argv[++i])
+		{
+			if (ft_nums_overflow(argv[i]) == -1)
+				return(ft_printf("Error!!!\n"), ft_free_stack(&stack_a), 0); //debes freesear antes de retornar
+			ft_stackadd_back(&stack_a, ft_stacknew(ft_atoi2(argv[i])));
+		}
+	}
 
     ////////////////////////// PRUEBAS //////////////////////////
     
@@ -46,10 +58,6 @@ int main(int argc, char **argv)
     //ft_reverse_rotate(&stack_a);
     //ft_reverse_reverse(&stack_a, &stack_b);
 
-    ft_printf("\n así empieza el stack_a:\n");
-    ft_print_stack(stack_a);
-    ft_printf("\n así empieza el stack_b:\n");
-    ft_print_stack(stack_b);
     var->len_a = ft_stacksize(stack_a);
     var->len_b = ft_stacksize(stack_b);
     ft_min_max(var, stack_b);
@@ -57,16 +65,17 @@ int main(int argc, char **argv)
     {
         ft_price_mov(stack_a, stack_b, var);
         while (var->i_stack_a-- > 0)
-            ft_rotate(&stack_a);
+            var->num_ops = var->num_ops + ft_rotate(&stack_a);
         while (var->i_stack_b-- > 0)
-            ft_rotate(&stack_b);
-        ft_push(&stack_b, &stack_a);
+            var->num_ops = var->num_ops + ft_rotate(&stack_b);
+        var->num_ops = var->num_ops + ft_push(&stack_b, &stack_a);
 	    var->len_a = ft_stacksize(stack_a);
     	var->len_b = ft_stacksize(stack_b);
         ft_min_max(var, stack_b);
     }
 	ft_last3_stack_a(&stack_a, var);
 	ft_big_first(&stack_b, var);
+	ft_pivots(&stack_a, &stack_b, var);
 	
     // int pos = ft_ideal_pos(stack_a->num, var, stack_b);
     // if (pos != 42000)
@@ -81,6 +90,7 @@ int main(int argc, char **argv)
     ft_print_stack(stack_a);
     ft_printf("\n así esta el stack_b:\n");
     ft_print_stack(stack_b);
+	ft_printf("\n%d\n ordenado %d\n", var->num_ops, ft_if_ascending(stack_a));
     ft_free_stack(&stack_a);
     return(0);
 }
