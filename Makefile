@@ -1,7 +1,7 @@
 LIB = ar rcs
 RM = rm -f
 
-CC = gcc
+CC = cc
 
 RED    = \033[31m
 GREEN  = \033[32m
