@@ -15,7 +15,7 @@ SRC_DIR = src
 
 SRC = push_shap_ops1.c push_shap_ops2.c push_swap_prices.c \
 	push_swap_stacks1.c push_swap_stacks2.c push_swap_utils.c \
-	push_swap_special_cases.c push_swap.c
+	push_swap_moves.c push_swap_moves2.c push_swap.c
 
 OBJ = $(SRC:.c=.o)
 

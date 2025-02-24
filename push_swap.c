@@ -6,7 +6,7 @@
 /*   By: roo <roo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 20:32:42 by roo               #+#    #+#             */
-/*   Updated: 2025/02/20 16:24:43 by roo              ###   ########.fr       */
+/*   Updated: 2025/02/24 17:28:19 by roo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ int main(int argc, char **argv)
     while(var->len_a > 3)
     {
         ft_price_mov(stack_a, stack_b, var);
+		//ft_optimize_position(&stack_a, &stack_b, var);
         while (var->i_stack_a-- > 0)
             var->num_ops = var->num_ops + ft_rotate(&stack_a);
         while (var->i_stack_b-- > 0)

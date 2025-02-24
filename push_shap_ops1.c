@@ -6,13 +6,13 @@
 /*   By: roo <roo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 16:16:38 by roo               #+#    #+#             */
-/*   Updated: 2025/02/20 15:56:17 by roo              ###   ########.fr       */
+/*   Updated: 2025/02/24 14:45:23 by roo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int ft_swap(t_stack **stack)
+int ft_swap(t_stack **stack) // sa sb
 {
     t_stack *first;
     t_stack *second;
@@ -28,14 +28,14 @@ int ft_swap(t_stack **stack)
     return(1);
 }
 
-int ft_swap_swap(t_stack **stack, t_stack **stack_2)
+int ft_swap_swap(t_stack **stack, t_stack **stack_2) // ss
 {
     if(ft_swap(stack) == 1 && ft_swap(stack_2) == 1)
         return(1);
     return(0);
 }
 
-int ft_push(t_stack **stack_dest, t_stack **stack_orig) // según el pa o el pb que queramos hacer colocaremos los stacks en un orden u otro.
+int ft_push(t_stack **stack_dest, t_stack **stack_orig) // pa pb
 {
     t_stack *first_orig;
 
