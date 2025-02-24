@@ -6,7 +6,7 @@
 /*   By: rocfemia <rocfemia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 20:36:16 by roo               #+#    #+#             */
-/*   Updated: 2025/02/24 19:51:50 by rocfemia         ###   ########.fr       */
+/*   Updated: 2025/02/24 19:53:45 by rocfemia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 # include <stdarg.h>
 # include "./Helicopter/libft.h"
 
-//ayuda
+//ayuda???
 
 typedef struct stack_list
 {
