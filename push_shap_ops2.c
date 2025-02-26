@@ -6,7 +6,7 @@
 /*   By: roo <roo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 14:15:22 by roo               #+#    #+#             */
-/*   Updated: 2025/02/24 14:45:16 by roo              ###   ########.fr       */
+/*   Updated: 2025/02/25 02:34:56 by roo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ int ft_reverse_rotate(t_stack **stack) // rra rrb
     prelast->next = NULL;
     last->next = *stack;
     *stack = last;
-    
     return(1);
 }
 
