@@ -6,7 +6,7 @@
 /*   By: roo <roo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 20:36:16 by roo               #+#    #+#             */
-/*   Updated: 2025/02/26 17:46:20 by roo              ###   ########.fr       */
+/*   Updated: 2025/03/06 17:28:59 by roo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,6 +99,9 @@ void		ft_optimize_position(t_stack **stack_a, t_stack **stack_b, t_vars *var);
 void		ft_double_rotate(t_stack **stack_a, t_stack **stack_b, t_vars *var);
 int			ft_lil_nums(t_stack **stack_a, t_stack **stack_b, t_vars *var);
 
+// MAIN
+
+int 		ft_next_step(t_stack *stack_a, t_stack *stack_b, t_vars *var);
 
 
 #endif
