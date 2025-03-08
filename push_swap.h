@@ -6,7 +6,7 @@
 /*   By: roo <roo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 20:36:16 by roo               #+#    #+#             */
-/*   Updated: 2025/03/08 17:28:23 by roo              ###   ########.fr       */
+/*   Updated: 2025/03/08 21:10:35 by roo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,13 +70,13 @@ void		ft_free_split(char **split);
 
 // OPERATIONS
 
-int 		ft_swap(t_stack **stack);
+int 		ft_swap(t_stack **stack, int mov);
 int 		ft_swap_swap(t_stack **stack, t_stack **stack_2);
-int 		ft_push(t_stack **stack_dest, t_stack **stack_orig);
+int 		ft_push(t_stack **stack_dest, t_stack **stack_orig, int mov);
 
-int			ft_rotate(t_stack **stack);
+int			ft_rotate(t_stack **stack, int mov);
 int			ft_rotate_rotate(t_stack **stack, t_stack **stack_2);
-int			ft_reverse_rotate(t_stack **stack);
+int			ft_reverse_rotate(t_stack **stack, int mov);
 int			ft_reverse_reverse(t_stack **stack, t_stack **stack_2);
 
 // PRICES

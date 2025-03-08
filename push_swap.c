@@ -6,7 +6,7 @@
 /*   By: roo <roo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 20:32:42 by roo               #+#    #+#             */
-/*   Updated: 2025/03/08 17:29:21 by roo              ###   ########.fr       */
+/*   Updated: 2025/03/08 21:37:47 by roo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int main(int argc, char **argv)
     argvn = NULL;
  	if (argc == 1)
 		return (ft_printf("Error_1\n"), free(var), -1);
+	ft_printf("Movimientos realizados:\n");
     ft_next_step(argc, argv, argvn, &stack_a);
 	ft_next_next_step(stack_a, stack_b, var);
 	return(0);
@@ -76,7 +77,7 @@ int ft_next_next_step(t_stack *stack_a, t_stack *stack_b, t_vars *var)
 	if(ft_if_repeat(stack_a) != 1)
 			return(ft_printf("Error_5\n"), ft_free_stack(&stack_a), 0);
 	if(ft_if_ascending(stack_a) == 1)
-		return(ft_printf("\nAsí esta el stack_a:\n"), ft_print_stack(stack_a), ft_printf("\nMovimientos: %d\nOrdenado: %d\n", var->num_ops, ft_if_ascending(stack_a)), ft_free_stack(&stack_a), free(var), 0);
+		return(ft_printf("\nAsí esta el stack_a:\n"), ft_print_stack(stack_a), ft_printf("\nNúmero de movimientos: %d\nEstá ordenado?: %d\n", var->num_ops, ft_if_ascending(stack_a)), ft_free_stack(&stack_a), free(var), 0);
 	if(var->len_a <= 3)
 		ft_lil_nums(&stack_a, &stack_b, var);
 	else
@@ -99,7 +100,7 @@ int ft_next_next_step(t_stack *stack_a, t_stack *stack_b, t_vars *var)
     ft_print_stack(stack_a);
     ft_printf("\nAsí esta el stack_b:\n");
     ft_print_stack(stack_b);
-	ft_printf("\nMovimientos: %d\nOrdenado: %d\n", var->num_ops, ft_if_ascending(stack_a));
+	ft_printf("\nNúmero de movimientos: %d\nEstá ordenado?: %d\n", var->num_ops, ft_if_ascending(stack_a));
     ft_free_stack(&stack_a);
 	free(var);
 	return(0);
