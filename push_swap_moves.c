@@ -6,7 +6,7 @@
 /*   By: roo <roo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 18:15:11 by roo               #+#    #+#             */
-/*   Updated: 2025/03/06 14:45:35 by roo              ###   ########.fr       */
+/*   Updated: 2025/03/07 16:05:27 by roo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,28 @@ int	ft_if_ascending(t_stack *stack)
 	while(stack->next)
 	{
 		if(stack->num > stack->next->num)
-			return(ft_printf("num desordenado %d\n", stack->num), 0);
+			return(0);
 		stack = stack->next;
 	}
 	return(1);
+}
+
+int	ft_if_repeat(t_stack *stack)
+{
+	t_stack *stack_aux;
+	int i;
+
+	i = stack->num;
+	stack_aux = stack->next;
+	while(stack_aux)
+	{
+		if(i == stack_aux->num)
+			return(ft_printf("num duplicado %d\n", stack->num), 0);
+		stack_aux = stack_aux->next;
+	}
+	if(stack->next == NULL)
+		return(1);
+	return(ft_if_repeat(stack->next));
 }
 
 int ft_last3_stack_a(t_stack **stack_a, t_vars *var)
@@ -90,16 +108,4 @@ void	ft_pivots(t_stack **stack_a, t_stack **stack_b, t_vars *var)
 		var->num_ops = var->num_ops + ft_reverse_rotate(stack_a);
 	while(*stack_b)
 		var->num_ops = var->num_ops + ft_push(stack_a, stack_b);
-}
-
-void	ft_rare_parsing(t_stack **stack_a, t_stack **stack_b, t_vars *var)
-{
-	if ((*stack_b)->num > (*stack_b)->next->num
-		&& (*stack_a)->num > (*stack_b)->next->num
-		&& (*stack_a)->num < (*stack_b)->num)
-		var->num_ops = var->num_ops + ft_swap(stack_b);
-	else if ((*stack_b)->num < (*stack_b)->next->num
-		&& ((*stack_a)->num > (*stack_b)->next->num
-			|| (*stack_a)->num < (*stack_b)->num))
-		var->num_ops = var->num_ops + ft_swap(stack_b);
 }

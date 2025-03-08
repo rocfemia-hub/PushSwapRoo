@@ -6,7 +6,7 @@
 /*   By: roo <roo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 14:18:57 by roo               #+#    #+#             */
-/*   Updated: 2025/02/26 18:12:51 by roo              ###   ########.fr       */
+/*   Updated: 2025/03/06 20:31:04 by roo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,4 +81,16 @@ int	ft_lil_nums(t_stack **stack_a, t_stack **stack_b, t_vars *var)
 		return (ft_pivots(stack_a, stack_b, var), -1);
 	}
 	return (0);
+}
+
+void	ft_rare_parsing(t_stack **stack_a, t_stack **stack_b, t_vars *var)
+{
+	if ((*stack_b)->num > (*stack_b)->next->num
+		&& (*stack_a)->num > (*stack_b)->next->num
+		&& (*stack_a)->num < (*stack_b)->num)
+		var->num_ops = var->num_ops + ft_swap(stack_b);
+	else if ((*stack_b)->num < (*stack_b)->next->num
+		&& ((*stack_a)->num > (*stack_b)->next->num
+			|| (*stack_a)->num < (*stack_b)->num))
+		var->num_ops = var->num_ops + ft_swap(stack_b);
 }
