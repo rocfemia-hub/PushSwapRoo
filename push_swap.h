@@ -6,7 +6,7 @@
 /*   By: roo <roo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 20:36:16 by roo               #+#    #+#             */
-/*   Updated: 2025/03/08 21:10:35 by roo              ###   ########.fr       */
+/*   Updated: 2025/03/09 19:33:25 by roo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,17 +92,18 @@ int			ft_ideal_pos(int number, t_vars *var, t_stack *stack);
 int			ft_last3_stack_a(t_stack **stack_a, t_vars *var);
 int			ft_if_ascending(t_stack *stack);
 int			ft_if_repeat(t_stack *stack);
+int 		ft_if_numb(char *argv, char **argvn, t_stack **stack_a);
 void		ft_big_first(t_stack **stack_b, t_vars *var);
-void		ft_pivots(t_stack **stack_a, t_stack **stack_b, t_vars *var);
 
 void		ft_optimize_position(t_stack **stack_a, t_stack **stack_b, t_vars *var);
 void		ft_double_rotate(t_stack **stack_a, t_stack **stack_b, t_vars *var);
 int			ft_lil_nums(t_stack **stack_a, t_stack **stack_b, t_vars *var);
 void		ft_rare_parsing(t_stack **stack_a, t_stack **stack_b, t_vars *var);
+void		ft_pivots(t_stack **stack_a, t_stack **stack_b, t_vars *var);
 
 // MAIN
 
-void		ft_next_step(int argc, char **argv, char **argvn, t_stack **stack_a);
+int			ft_next_step(int argc, char **argv, char **argvn, t_stack **stack_a);
 int 		ft_next_next_step(t_stack *stack_a, t_stack *stack_b, t_vars *var);
 
 

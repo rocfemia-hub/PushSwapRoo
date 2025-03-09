@@ -6,7 +6,7 @@
 /*   By: roo <roo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 18:15:11 by roo               #+#    #+#             */
-/*   Updated: 2025/03/08 21:29:34 by roo              ###   ########.fr       */
+/*   Updated: 2025/03/09 19:34:32 by roo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,40 @@ int	ft_if_repeat(t_stack *stack)
 		return(1);
 	return(ft_if_repeat(stack->next));
 }
+
+int ft_if_numb(char *argv, char **argvn, t_stack **stack_a)
+{
+	int i;
+	
+	i = -1;
+    argvn = ft_split(argv, ' ');
+	while (argvn[++i])
+	{
+		if (ft_nums_overflow(argvn[i]) == -1)
+			return(ft_printf("Error_6\n"), ft_free_stack(stack_a), ft_free_split(argvn), -1);
+		ft_stackadd_back(stack_a, ft_stacknew(ft_atoi2(argvn[i])));
+	}
+	return(ft_free_split(argvn), 0);
+}
+/* {
+	int	i;
+
+	i = 0;
+	while (s[i] != '\0')
+	{
+		printf("%c\n", s[i]);
+		if (s[i] == '-' || s[i] == '+' || s[i] == ' ')
+		{
+		printf("accediste '%c'\n", s[i]);			
+			i++;
+		}
+		printf("%c\n", s[i]);
+		if (ft_isdigit(s[i]) == 0)
+			return (1);
+		i++;
+	}
+	return (0);
+} */
 
 int ft_last3_stack_a(t_stack **stack_a, t_vars *var)
 {
@@ -85,27 +119,4 @@ void	ft_big_first(t_stack **stack_b, t_vars *var)
 			}
 		}
 	}
-}
-void	ft_pivots(t_stack **stack_a, t_stack **stack_b, t_vars *var)
-{
-	int	first_a;
-	int second_a;
-	int third_a;
-
-	first_a = (*stack_a)->num;
-	second_a = (*stack_a)->next->num;
-	third_a = (*stack_a)->next->next->num;
-	while ((*stack_b)->num > third_a)
-		var->num_ops = var->num_ops + ft_push(stack_a, stack_b, 1);
-	var->num_ops = var->num_ops + ft_reverse_rotate(stack_a, 0);
-	while (*stack_b && (*stack_b)->num > second_a)
-		var->num_ops = var->num_ops + ft_push(stack_a, stack_b, 1);
-	var->num_ops = var->num_ops + ft_reverse_rotate(stack_a, 0);
-	while (*stack_b && (*stack_b)->num > first_a)
-		var->num_ops = var->num_ops + ft_push(stack_a, stack_b, 1);
-	ft_min_max(var, *stack_a);
-	if(*stack_b || var->pos_min_b != 0)
-		var->num_ops = var->num_ops + ft_reverse_rotate(stack_a, 0);
-	while(*stack_b)
-		var->num_ops = var->num_ops + ft_push(stack_a, stack_b, 1);
 }
