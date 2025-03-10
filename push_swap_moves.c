@@ -6,7 +6,7 @@
 /*   By: roo <roo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 18:15:11 by roo               #+#    #+#             */
-/*   Updated: 2025/03/09 19:34:32 by roo              ###   ########.fr       */
+/*   Updated: 2025/03/10 20:26:16 by roo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int ft_if_numb(char *argv, char **argvn, t_stack **stack_a)
 	while (argvn[++i])
 	{
 		if (ft_nums_overflow(argvn[i]) == -1)
-			return(ft_printf("Error_6\n"), ft_free_stack(stack_a), ft_free_split(argvn), -1);
+			return(ft_free_stack(stack_a), ft_free_split(argvn), -1);
 		ft_stackadd_back(stack_a, ft_stacknew(ft_atoi2(argvn[i])));
 	}
 	return(ft_free_split(argvn), 0);

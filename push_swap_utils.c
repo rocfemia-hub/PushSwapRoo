@@ -6,7 +6,7 @@
 /*   By: roo <roo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 21:20:02 by roo               #+#    #+#             */
-/*   Updated: 2025/02/26 15:35:13 by roo              ###   ########.fr       */
+/*   Updated: 2025/03/10 20:19:21 by roo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,8 @@ int	ft_nums_overflow(const char *nptr)
 		if (result * sig > INT_MAX || result * sig < INT_MIN)
 			return(-1);
 	}
+	if (nptr[i] != '\0')
+		return (-1);
 	return(0);
 }
 

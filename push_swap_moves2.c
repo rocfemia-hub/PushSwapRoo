@@ -6,7 +6,7 @@
 /*   By: roo <roo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 14:18:57 by roo               #+#    #+#             */
-/*   Updated: 2025/03/09 20:09:42 by roo              ###   ########.fr       */
+/*   Updated: 2025/03/10 18:12:36 by roo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,7 @@ void	ft_pivots(t_stack **stack_a, t_stack **stack_b, t_vars *var)
 	first_a = (*stack_a)->num;
 	second_a = (*stack_a)->next->num;
 	third_a = (*stack_a)->next->next->num;
-	while ((*stack_b)->num > third_a)
+	while (*stack_b && (*stack_b)->num > third_a)
 		var->num_ops = var->num_ops + ft_push(stack_a, stack_b, 1);
 	var->num_ops = var->num_ops + ft_reverse_rotate(stack_a, 0);
 	while (*stack_b && (*stack_b)->num > second_a)
