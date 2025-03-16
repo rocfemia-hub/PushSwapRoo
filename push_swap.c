@@ -6,7 +6,7 @@
 /*   By: roo <roo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 20:32:42 by roo               #+#    #+#             */
-/*   Updated: 2025/03/16 17:45:14 by roo              ###   ########.fr       */
+/*   Updated: 2025/03/16 19:15:18 by roo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,4 +94,5 @@ int	ft_next_next_step(t_stack *stack_a, t_stack *stack_b, t_vars *var)
 /* ft_printf("\nAsí esta el stack_a:\n");
     ft_print_stack(stack_a);
 ft_printf("\nNúmero de movimientos: 
-%d\nEstá ordenado?: %d\n", var->num_ops, ft_if_ascending(stack_a)); */
+%d\nEstá ordenado?: %d\n", var->num_ops, ft_if_ascending(stack_a)); 
+ARG=$(seq -1000 1000 | sort -R | tail -n 500 | tr '\n' ' '); ./push_swap $ARG*/
