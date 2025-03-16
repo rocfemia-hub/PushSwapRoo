@@ -6,7 +6,7 @@
 /*   By: roo <roo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 16:56:42 by roo               #+#    #+#             */
-/*   Updated: 2024/12/13 14:29:40 by roo              ###   ########.fr       */
+/*   Updated: 2025/03/16 15:08:32 by roo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ char	*ft_find_line(char *buffer)
 	return (line);
 }
 
-char    *ft_create_line(char *buffer, char *line)
+char	*ft_create_line(char *buffer, char *line)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (buffer[i] != '\n' && buffer[i] != '\0')
@@ -50,7 +50,7 @@ char    *ft_create_line(char *buffer, char *line)
 		i++;
 	}
 	line[i] = '\0';
-	return(line);
+	return (line);
 }
 
 char	*get_next_line(int fd)
@@ -82,7 +82,7 @@ char	*get_next_line(int fd)
 	return (line);
 }
 
-#include <fcntl.h>
+/*#include <fcntl.h>
 int	main (void)
 {
  	char *file = "./patata.txt";
@@ -101,4 +101,4 @@ int	main (void)
  	free(str);
  	close(fd);
 	return (0);
-}
+}*/

@@ -6,27 +6,27 @@
 /*   By: roo <roo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 01:53:24 by roo               #+#    #+#             */
-/*   Updated: 2025/01/06 17:15:10 by roo              ###   ########.fr       */
+/*   Updated: 2025/03/16 15:03:59 by roo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void				ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-    t_list  *node;
-    
-    node = *lst;
-    if(!node)
-    {
-        *lst = new;
-        return ;
-    }
-    while(lst && node->next != NULL)
-    {
-        node = node->next;       
-    }
-    node->next = new;
+	t_list	*node;
+
+	node = *lst;
+	if (!node)
+	{
+		*lst = new;
+		return ;
+	}
+	while (lst && node->next != NULL)
+	{
+		node = node->next;
+	}
+	node->next = new;
 }
 /*#include <stdio.h>
 int main() 

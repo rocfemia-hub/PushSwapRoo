@@ -6,7 +6,7 @@
 /*   By: roo <roo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 14:18:57 by roo               #+#    #+#             */
-/*   Updated: 2025/03/10 18:12:36 by roo              ###   ########.fr       */
+/*   Updated: 2025/03/16 14:54:43 by roo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,22 @@
 void	ft_optimize_position(t_stack **stack_a, t_stack **stack_b, t_vars *var)
 {
 	ft_double_rotate(stack_a, stack_b, var);
-	if(var->i_stack_a > 0 && var->i_stack_a < var->len_a)
+	if (var->i_stack_a > 0 && var->i_stack_a < var->len_a)
 	{
-		if(var->i_stack_a > (var->len_a / 2) + 1)
-			while(var->i_stack_a++ < var->len_a)
+		if (var->i_stack_a > (var->len_a / 2) + 1)
+			while (var->i_stack_a++ < var->len_a)
 				var->num_ops = var->num_ops + ft_reverse_rotate(stack_a, 0);
 		else
-			while(var->i_stack_a-- > 0)
+			while (var->i_stack_a-- > 0)
 				var->num_ops = var->num_ops + ft_rotate(stack_a, 0);
 	}
-	if(var->i_stack_b > 0 && var->i_stack_b < var->len_b)
+	if (var->i_stack_b > 0 && var->i_stack_b < var->len_b)
 	{
-		if(var->i_stack_b > (var->len_b / 2) + 1)
-			while(var->i_stack_b++ < var->len_b)
+		if (var->i_stack_b > (var->len_b / 2) + 1)
+			while (var->i_stack_b++ < var->len_b)
 				var->num_ops = var->num_ops + ft_reverse_rotate(stack_b, 1);
 		else
-			while(var->i_stack_b-- > 0)
+			while (var->i_stack_b-- > 0)
 				var->num_ops = var->num_ops + ft_rotate(stack_b, 1);
 	}
 	var->num_ops = var->num_ops + ft_push(stack_b, stack_a, 0);
@@ -45,7 +45,8 @@ void	ft_double_rotate(t_stack **stack_a, t_stack **stack_b, t_vars *var)
 		var->i_stack_a--;
 		var->i_stack_b--;
 	}
-	while (var->i_stack_b > (var->len_b / 2) + 1 && var->i_stack_a > (var->len_a / 2) + 1
+	while (var->i_stack_b > (var->len_b / 2) + 1
+		&& var->i_stack_a > (var->len_a / 2) + 1
 		&& var->i_stack_b < var->len_b && var->i_stack_a < var->len_a)
 	{
 		var->num_ops = var->num_ops + ft_reverse_reverse(stack_a, stack_b);
@@ -98,8 +99,8 @@ void	ft_rare_parsing(t_stack **stack_a, t_stack **stack_b, t_vars *var)
 void	ft_pivots(t_stack **stack_a, t_stack **stack_b, t_vars *var)
 {
 	int	first_a;
-	int second_a;
-	int third_a;
+	int	second_a;
+	int	third_a;
 
 	first_a = (*stack_a)->num;
 	second_a = (*stack_a)->next->num;
@@ -113,8 +114,8 @@ void	ft_pivots(t_stack **stack_a, t_stack **stack_b, t_vars *var)
 	while (*stack_b && (*stack_b)->num > first_a)
 		var->num_ops = var->num_ops + ft_push(stack_a, stack_b, 1);
 	ft_min_max(var, *stack_a);
-	if(*stack_b || var->pos_min_b != 0)
+	if (*stack_b || var->pos_min_b != 0)
 		var->num_ops = var->num_ops + ft_reverse_rotate(stack_a, 0);
-	while(*stack_b)
+	while (*stack_b)
 		var->num_ops = var->num_ops + ft_push(stack_a, stack_b, 1);
 }

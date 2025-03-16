@@ -6,18 +6,18 @@
 /*   By: roo <roo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 19:08:04 by roo               #+#    #+#             */
-/*   Updated: 2025/01/04 21:00:47 by roo              ###   ########.fr       */
+/*   Updated: 2025/03/16 15:09:58 by roo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_lstadd_front(t_list **lst, t_list *new)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-    if (!lst | !new)
-        return ;
-    new->next = *lst;
-    *lst = new;
+	if (!lst | !new)
+		return ;
+	new->next = *lst;
+	*lst = new;
 }
 /*#include <stdio.h>
 int main() 

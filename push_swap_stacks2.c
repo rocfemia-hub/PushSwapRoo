@@ -6,7 +6,7 @@
 /*   By: roo <roo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 20:38:51 by roo               #+#    #+#             */
-/*   Updated: 2025/02/03 20:39:51 by roo              ###   ########.fr       */
+/*   Updated: 2025/03/16 15:50:27 by roo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_free_stack(t_stack **stack)
 	}
 }
 
-void    ft_stackadd_front(t_stack **lst, t_stack *new)
+void	ft_stackadd_front(t_stack **lst, t_stack *new)
 {
 	if (!*lst)
 	{
@@ -36,23 +36,23 @@ void    ft_stackadd_front(t_stack **lst, t_stack *new)
 	else
 	{
 		new->next = *lst;
-   		*lst = new;
-	}  
+		*lst = new;
+	}
 }
 
-void    ft_stackadd_back(t_stack **stack, t_stack *new)
+void	ft_stackadd_back(t_stack **stack, t_stack *new)
 {
-    t_stack  *node;
-    
-    node = *stack;
-    if(!node)
-    {
-        *stack = new;
-        return ;
-    }
-    while(stack && node->next != NULL)
-    {
-        node = node->next;       
-    }
-    node->next = new;
+	t_stack	*node;
+
+	node = *stack;
+	if (!node)
+	{
+		*stack = new;
+		return ;
+	}
+	while (stack && node->next != NULL)
+	{
+		node = node->next;
+	}
+	node->next = new;
 }

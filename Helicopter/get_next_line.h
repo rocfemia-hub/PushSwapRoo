@@ -6,7 +6,7 @@
 /*   By: roo <roo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 15:26:57 by roo               #+#    #+#             */
-/*   Updated: 2025/01/21 19:50:49 by roo              ###   ########.fr       */
+/*   Updated: 2025/03/16 15:09:15 by roo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,8 @@
 # include <unistd.h>
 
 char	*ft_find_line(char *buffer);
-char    *ft_create_line(char *buffer, char *line);
+char	*ft_create_line(char *buffer, char *line);
 char	*get_next_line(int fd);
-
 
 size_t	ft_strlen_gnl(const char *s);
 char	*ft_strjoin_gnl(char *s1, const char *s2);
