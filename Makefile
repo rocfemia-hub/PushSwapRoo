@@ -3,9 +3,6 @@ RM = rm -f
 
 CC = gcc
 
-RED    = \033[31m
-GREEN  = \033[32m
-YELLOW = \033[33m
 BLUE   = \033[34m
 RESET  = \033[0m
 
@@ -28,12 +25,12 @@ LIBFTA = Helicopter/libft.a
 all: $(NAME)
 
 %.o: %.c
-	@$(CC) $(CCFLAGS) -I/Helicopter/libft.h -I/usr/include -O3 -c $< -o $@
+	@$(CC) $(CCFLAGS) -I/Helicopter/libft.h -c $< -o $@
 
 $(NAME): $(OBJ)
 	@cd Helicopter && make
 	@$(CC) $(CCFLAGS) $(OBJ) -IHelicopter $(LIBFTA) -o $(NAME)
-	@echo "$(GREEN)        ||>>    $(GREEN)push_swap $(GREEN)compiled!!    <<||$(RESET)"
+	@echo "$(BLUE)        ||>>    $(BLUE)push_swap compiled!!    <<||$(RESET)"
 
 clean:
 	@$(RM) $(OBJ)

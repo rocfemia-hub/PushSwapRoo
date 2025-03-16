@@ -6,7 +6,7 @@
 /*   By: roo <roo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 19:15:07 by roo               #+#    #+#             */
-/*   Updated: 2025/03/16 15:40:14 by roo              ###   ########.fr       */
+/*   Updated: 2025/03/16 18:07:16 by roo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,12 +60,3 @@ int	ft_stacksize(t_stack *stack)
 	}
 	return (i);
 }
-
-/*t_stack *findprev(t_stack *stack_a, int num)
-{
-    while(stack_a->next && stack_a->next->num != num)
-    {
-        stack_a = stack_a->next;
-    }
-    return (stack_a);
-}*/

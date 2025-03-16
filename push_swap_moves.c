@@ -6,7 +6,7 @@
 /*   By: roo <roo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 18:15:11 by roo               #+#    #+#             */
-/*   Updated: 2025/03/16 16:00:02 by roo              ###   ########.fr       */
+/*   Updated: 2025/03/16 16:37:17 by roo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,13 +66,15 @@ int	ft_last3_stack_a(t_stack **stack_a, t_vars *var)
 	else if (var->first > var->second && var->third > var->first)
 		return (var->num_ops = var->num_ops + ft_swap(stack_a, 0), 1);
 	else if (var->first < var->third && var->third < var->second)
-		return (var->num_ops = var->num_ops + ft_swap(stack_a, 0), var->num_ops = var->num_ops + ft_rotate(stack_a, 0), 2);
+		return (var->num_ops = var->num_ops + ft_swap(stack_a, 0),
+			var->num_ops = var->num_ops + ft_rotate(stack_a, 0), 2);
 	else if (var->third < var->second && var->second > var->first)
 		return (var->num_ops = var->num_ops + ft_reverse_rotate(stack_a, 0), 3);
 	else if (var->first > var->second && var->second < var->third)
 		return (var->num_ops = var->num_ops + ft_rotate(stack_a, 0), 4);
 	else if (var->first > var->second && var->second > var->third)
-		return (var->num_ops = var->num_ops + ft_rotate(stack_a, 0), var->num_ops = var->num_ops + ft_swap(stack_a, 0), 5);
+		return (var->num_ops = var->num_ops + ft_rotate(stack_a, 0),
+			var->num_ops = var->num_ops + ft_swap(stack_a, 0), 5);
 	return (6);
 }
 

@@ -6,7 +6,7 @@
 /*   By: roo <roo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 20:32:42 by roo               #+#    #+#             */
-/*   Updated: 2025/03/16 15:28:54 by roo              ###   ########.fr       */
+/*   Updated: 2025/03/16 17:45:14 by roo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ int	main(int argc, char **argv)
 	stack_b = NULL;
 	argvn = NULL;
 	if (argc == 1)
-		return (ft_printf("Error_1\n"), free(var), -1);
+		return (ft_printf("Error\n"), free(var), -1);
 	if (ft_next_step(argc, argv, argvn, &stack_a) == -1)
-		return (ft_printf("Error_6\n"), 0);
+		return (ft_printf("Error\n"), 0);
 	var->num_ops = 0;
 	var->len_a = ft_stacksize(stack_a);
 	var->len_b = ft_stacksize(stack_b);
@@ -46,7 +46,8 @@ int	ft_next_step(int argc, char **argv, char **argvn, t_stack **stack_a)
 		while (argvn[++i])
 		{
 			if (ft_nums_overflow(argvn[i]) == -1)
-				return (ft_printf("Error\n"), ft_free_stack(stack_a), ft_free_split(argvn), -1);
+				return (ft_printf("Error\n"), ft_free_stack(stack_a),
+					ft_free_split(argvn), -1);
 			ft_stackadd_back(stack_a, ft_stacknew(ft_atoi2(argvn[i])));
 		}
 		ft_free_split(argvn);
@@ -65,10 +66,10 @@ int	ft_next_step(int argc, char **argv, char **argvn, t_stack **stack_a)
 int	ft_next_next_step(t_stack *stack_a, t_stack *stack_b, t_vars *var)
 {
 	if (var->len_a == 0)
-		return (ft_printf("Error_4\n"), free(var), 0);
+		return (ft_printf("Error\n"), free(var), 0);
 	ft_min_max(var, stack_b);
 	if (ft_if_repeat(stack_a) != 1)
-		return (ft_printf("Error_5\n"), ft_free_stack(&stack_a), 0);
+		return (ft_printf("Error\n"), ft_free_stack(&stack_a), 0);
 	if (ft_if_ascending(stack_a) == 1)
 		return (ft_free_stack(&stack_a), free(var), 0);
 	if (var->len_a <= 3)
